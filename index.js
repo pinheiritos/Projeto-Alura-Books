@@ -1,43 +1,37 @@
-import { livros } from './dadosUltimosLancamentos';
-import { Titulo } from '../titulo'
-import CardRecomenda from '../cardRecomenda';
-import imagemLivro from '../../imagens/livro2.png'
-import { styled } from 'styled-components'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { createGlobalStyle } from 'styled-components';
 
-const UltimosLancamentosContainer = styled.section`
-    background-color: #EBECEE;
-    padding-bottom: 20px;
-    display: flex;
-    flex-direction: column;
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  li {
+    list-style: none;
+  }
 `
-const NovosLivrosContainer = styled.div`
-    margin-top: 30px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    cursor: pointer;
-`
 
-function UltimosLancamentos() {
-    return (
-        <UltimosLancamentosContainer>
-            <Titulo cor={"#EB9B00"} tamanhoFonte={"36px"}>ÚLTIMOS LANÇAMENTOS</Titulo>
-            <NovosLivrosContainer>
-                {
-                    livros.map(livro => (
-                        <img src={livro.src} alt="" />
-                    ))
-                }
-            </NovosLivrosContainer>
-            <CardRecomenda
-                titulo="Talvez você se interesse por"
-                subtitulo="Angular 11"
-                descricao="Construindo uma aplicação com a plataforma Google"
-                img={imagemLivro}
-            />
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <GlobalStyle />
+    <App />
+  </React.StrictMode>
+);
 
-        </UltimosLancamentosContainer>
-    )
-}
-
-export default UltimosLancamentos;
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
