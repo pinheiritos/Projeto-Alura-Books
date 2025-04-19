@@ -1,4 +1,3 @@
-Projeto Alura Books
 Este repositório contém meu segundo projeto publicado no GitHub, desenvolvido durante o curso "React: comece seu projeto full stack" da Alura. Trata-se de uma aplicação que simula uma livraria digital, com componentes React reutilizáveis e organização moderna de código.
 
 ⚛️ Sobre o projeto
